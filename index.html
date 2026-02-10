@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central de Leads | Grupo Barigui</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
             <form id="login-form">
                 <input type="text" id="username" placeholder="Usuário" required>
                 <input type="password" id="password" placeholder="Senha" required>
-                <button type="submit">Entrar no Sistema</button>
+                <button type="submit">Acessar Painel</button>
             </form>
         </div>
     </div>
@@ -28,59 +28,63 @@
         
         <aside class="sidebar">
             <div class="sidebar-header">
-                <i data-lucide="layers"></i>
+                <i data-lucide="layers" class="icon-brand"></i>
                 <span>CENTRAL</span>
             </div>
             <nav class="menu-nav">
-                <button class="menu-item active" onclick="load('URL_IA', event)"><i data-lucide="sparkles"></i> RESULTADO IA</button>
-                <button class="menu-item" onclick="load('URL_ALERTAS', event)"><i data-lucide="megaphone"></i> ALERTAS E ELOGIOS</button>
-                <button class="menu-item" onclick="load('URL_PESQ_ALERTA', event)"><i data-lucide="search"></i> PESQUISA ALERTA</button>
-                <button class="menu-item" onclick="load('URL_PESQ_ELOGIO', event)"><i data-lucide="message-square"></i> PESQUISA ELOGIO</button>
-                <button class="menu-item" onclick="load('URL_FECHAMENTOS', event)"><i data-lucide="check-circle"></i> FECHAMENTOS</button>
-                <button class="menu-item" onclick="load('URL_ENVIOS', event)"><i data-lucide="send"></i> ENVIOS</button>
-                <button class="menu-item" onclick="load('URL_SDR', event)"><i data-lucide="user-check"></i> RESULTADO SDR</button>
-                <button class="menu-item" onclick="load('URL_MARCAS', event)"><i data-lucide="building"></i> TOP MARCAS E UNID.</button>
-                <button class="menu-item" onclick="load('URL_VENDEDORES', event)"><i data-lucide="users"></i> TOP VENDEDORES</button>
-                <button class="menu-item" onclick="load('URL_VEICULOS', event)"><i data-lucide="car"></i> TOP VEÍCULOS</button>
+                <button class="menu-item active" onclick="load('URL_IA?navLayout=hidden', event)"><i data-lucide="sparkles"></i> RESULTADO IA</button>
+                <button class="menu-item" onclick="load('https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_7wno4cbczd?navLayout=hidden', event)"><i data-lucide="megaphone"></i> ALERTAS E ELOGIOS</button>
+                <button class="menu-item" onclick="load('URL_PESQ_ALERTA?navLayout=hidden', event)"><i data-lucide="search"></i> PESQUISA ALERTA</button>
+                <button class="menu-item" onclick="load('URL_PESQ_ELOGIO?navLayout=hidden', event)"><i data-lucide="message-square"></i> PESQUISA ELOGIO</button>
+                <button class="menu-item" onclick="load('URL_FECHAMENTOS?navLayout=hidden', event)"><i data-lucide="check-circle"></i> FECHAMENTOS</button>
+                <button class="menu-item" onclick="load('URL_ENVIOS?navLayout=hidden', event)"><i data-lucide="send"></i> ENVIOS</button>
+                <button class="menu-item" onclick="load('URL_SDR?navLayout=hidden', event)"><i data-lucide="user-check"></i> RESULTADO SDR</button>
+                <button class="menu-item" onclick="load('URL_MARCAS?navLayout=hidden', event)"><i data-lucide="building"></i> TOP MARCAS E UNID.</button>
+                <button class="menu-item" onclick="load('URL_VENDEDORES?navLayout=hidden', event)"><i data-lucide="users"></i> TOP VENDEDORES</button>
+                <button class="menu-item" onclick="load('URL_VEICULOS?navLayout=hidden', event)"><i data-lucide="car"></i> TOP VEÍCULOS</button>
                 
-                <div id="admin-section" style="display: none; margin-top: 20px; border-top: 1px solid #333; padding-top: 10px;">
+                <div id="admin-section" class="admin-divider">
                     <button class="menu-item admin-btn" onclick="showMonitor(event)"><i data-lucide="shield-check"></i> MONITORAMENTO</button>
                 </div>
             </nav>
         </aside>
 
         <main class="main-content">
-            <nav class="navbar">
+            <header class="navbar">
                 <div class="nav-left">
-                    <strong>GRUPO BARIGUI - CENTRAL DE OPERAÇÕES - VENDAS</strong>
+                    <span class="nav-label">OPERAÇÕES</span>
+                    <strong>VENDAS - GRUPO BARIGUI</strong>
                 </div>
                 <div class="nav-right">
-                    <span id="user-display" style="margin-right: 15px;"></span>
+                    <div class="user-pill">
+                        <i data-lucide="user" class="icon-user"></i>
+                        <span id="user-display"></span>
+                    </div>
                     <button onclick="location.reload()" class="btn-logout">Sair</button>
                 </div>
-            </nav>
+            </header>
 
-            <div id="dashboard-view" class="dashboard-container">
+            <section id="dashboard-view" class="dashboard-container">
                 <div class="iframe-wrapper">
-                    <iframe id="report-frame" src="URL_INICIAL_IA" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="report-frame" src="URL_INICIAL_IA?navLayout=hidden" frameborder="0" allowfullscreen></iframe>
                 </div>
-            </div>
+            </section>
 
-            <div id="monitor-view" class="monitor-container" style="display: none;">
+            <section id="monitor-view" class="monitor-container" style="display: none;">
                 <div class="monitor-split">
                     <div class="monitor-box">
-                        <div class="box-header">EMAILS RECEBIDOS (REGEX/PYTHON)</div>
-                        <div id="email-log" class="log-content">Aguardando dados da automação...</div>
+                        <div class="box-header">PROCESSAMENTO GMAIL (REGEX)</div>
+                        <div id="email-log" class="log-content">Status: Aguardando trigger...</div>
                     </div>
                     <div class="monitor-box">
-                        <div class="box-header">ENVIOS DE PDF (LOOKER)</div>
-                        <div id="pdf-log" class="log-content">Carregando logs de envio...</div>
+                        <div class="box-header">DISPARO LOOKER PDF</div>
+                        <div id="pdf-log" class="log-content">Status: Standby...</div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <footer class="footer">
-                © 2026 Grupo Barigui - Todos os direitos reservados.
+                <span>Plataforma de BI Interna • Grupo Barigui © 2026</span>
             </footer>
         </main>
     </div>
