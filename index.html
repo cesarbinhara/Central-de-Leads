@@ -12,11 +12,14 @@
 
     <div id="login-screen" class="login-overlay">
         <div class="login-card">
-            <img src="logo-barigui.png" alt="Grupo Barigui" onerror="this.src='https://via.placeholder.com/150x50?text=BARIGUI'">
+            <div class="login-logo">
+                <img src="logo-barigui.png" alt="Grupo Barigui" onerror="this.src='https://via.placeholder.com/200x60?text=GRUPO+BARIGUI'">
+            </div>
+            <h3>Inteligência Operacional</h3>
             <form id="login-form">
                 <input type="text" id="username" placeholder="Usuário" required>
                 <input type="password" id="password" placeholder="Senha" required>
-                <button type="submit">Entrar</button>
+                <button type="submit">Entrar no Sistema</button>
             </form>
         </div>
     </div>
@@ -30,17 +33,17 @@
             </div>
             <nav class="menu-nav">
                 <button class="menu-item active" onclick="load('URL_IA', event)"><i data-lucide="sparkles"></i> RESULTADO IA</button>
-                <button class="menu-item" onclick="load('URL_ALERTA', event)"><i data-lucide="megaphone"></i> ALERTAS E ELOGIOS</button>
+                <button class="menu-item" onclick="load('URL_ALERTAS', event)"><i data-lucide="megaphone"></i> ALERTAS E ELOGIOS</button>
                 <button class="menu-item" onclick="load('URL_PESQ_ALERTA', event)"><i data-lucide="search"></i> PESQUISA ALERTA</button>
                 <button class="menu-item" onclick="load('URL_PESQ_ELOGIO', event)"><i data-lucide="message-square"></i> PESQUISA ELOGIO</button>
                 <button class="menu-item" onclick="load('URL_FECHAMENTOS', event)"><i data-lucide="check-circle"></i> FECHAMENTOS</button>
                 <button class="menu-item" onclick="load('URL_ENVIOS', event)"><i data-lucide="send"></i> ENVIOS</button>
                 <button class="menu-item" onclick="load('URL_SDR', event)"><i data-lucide="user-check"></i> RESULTADO SDR</button>
-                <button class="menu-item" onclick="load('URL_MARCAS', event)"><i data-lucide="building"></i> TOP MARCAS E UNIDADES</button>
+                <button class="menu-item" onclick="load('URL_MARCAS', event)"><i data-lucide="building"></i> TOP MARCAS E UNID.</button>
                 <button class="menu-item" onclick="load('URL_VENDEDORES', event)"><i data-lucide="users"></i> TOP VENDEDORES</button>
-                <button class="menu-item" onclick="load('URL_VEICULOS', event)"><i data-lucide="car"></i> TOP VEICULOS</button>
+                <button class="menu-item" onclick="load('URL_VEICULOS', event)"><i data-lucide="car"></i> TOP VEÍCULOS</button>
                 
-                <div id="admin-section" style="display: none; margin-top: 20px; border-top: 1px solid #1f2937; padding-top: 10px;">
+                <div id="admin-section" style="display: none; margin-top: 20px; border-top: 1px solid #333; padding-top: 10px;">
                     <button class="menu-item admin-btn" onclick="showMonitor(event)"><i data-lucide="shield-check"></i> MONITORAMENTO</button>
                 </div>
             </nav>
@@ -48,7 +51,9 @@
 
         <main class="main-content">
             <nav class="navbar">
-                <div class="nav-left"><strong>GRUPO BARIGUI - CENTRAL DE OPERAÇÕES - VENDAS</strong></div>
+                <div class="nav-left">
+                    <strong>GRUPO BARIGUI - CENTRAL DE OPERAÇÕES - VENDAS</strong>
+                </div>
                 <div class="nav-right">
                     <span id="user-display" style="margin-right: 15px;"></span>
                     <button onclick="location.reload()" class="btn-logout">Sair</button>
@@ -57,7 +62,7 @@
 
             <div id="dashboard-view" class="dashboard-container">
                 <div class="iframe-wrapper">
-                    <iframe id="report-frame" src="URL_INICIAL" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="report-frame" src="URL_INICIAL_IA" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -65,14 +70,18 @@
                 <div class="monitor-split">
                     <div class="monitor-box">
                         <div class="box-header">EMAILS RECEBIDOS (REGEX/PYTHON)</div>
-                        <div id="email-log" class="log-content">Aguardando dados...</div>
+                        <div id="email-log" class="log-content">Aguardando dados da automação...</div>
                     </div>
                     <div class="monitor-box">
                         <div class="box-header">ENVIOS DE PDF (LOOKER)</div>
-                        <div id="pdf-log" class="log-content">Carregando logs...</div>
+                        <div id="pdf-log" class="log-content">Carregando logs de envio...</div>
                     </div>
                 </div>
             </div>
+
+            <footer class="footer">
+                © 2026 Grupo Barigui - Todos os direitos reservados.
+            </footer>
         </main>
     </div>
 
