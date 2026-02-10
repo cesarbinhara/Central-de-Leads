@@ -3,40 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de BI | Cesar Binhara</title>
+    <title>Central de Leads | Grupo Barigui</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <strong>CESAR</strong> BINHARA
+    <div id="login-screen" class="login-overlay">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="logo-barigui.png" alt="Grupo Barigui" onerror="this.src='https://via.placeholder.com/200x60?text=GRUPO+BARIGUI'">
+            </div>
+            <h3>Inteligência Operacional</h3>
+            <p>Acesse o painel consolidado de BI.</p>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar no Sistema</button>
+            </form>
+            <p class="login-footer">Acesso restrito a colaboradores autorizados.</p>
         </div>
-        <nav class="info-badges">
-            <span class="badge">Analista de Dados</span>
-            <span class="badge">UFPR</span>
-            <span class="badge">Python & SQL</span>
-        </nav>
-        <div class="actions">
-            <a href="https://linkedin.com/in/seu-perfil" target="_blank" class="btn-contact">LinkedIn</a>
-        </div>
-    </header>
+    </div>
 
-    <main class="dashboard-container">
-        <div class="dashboard-header">
-            <h1>Panorama Consolidado de Operações</h1>
-            <p>Integração de dados via ETL (Python/SQL) provenientes de 5 sistemas de CRM e gestão.</p>
-        </div>
-        
-        <div class="iframe-wrapper">
-            <iframe src="https://lookerstudio.google.com/embed/reporting/SEU_ID_AQUI" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-    </main>
+    <div id="main-app" class="app-container" style="display: none;">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <strong>CENTRAL DE LEADS</strong>
+            </div>
+            <nav class="menu">
+                <small class="menu-label">INTELIGÊNCIA IA</small>
+                <button class="menu-item active" onclick="load('https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_my12rcbczd')">
+                    <i data-lucide="sparkles"></i> RESULTADO IA
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_ALERTAS')">
+                    <i data-lucide="bell"></i> ALERTAS E ELOGIOS
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_PESQUISA_ALERTA')">
+                    <i data-lucide="search"></i> PESQUISA - ALERTA
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_PESQUISA_ELOGIO')">
+                    <i data-lucide="thumbs-up"></i> PESQUISA - ELOGIO
+                </button>
 
-    <footer class="footer">
-        <p>© 2026 Cesar Eduardo Lopes Binhara - Desenvolvido com foco em BI e Engenharia de Dados.</p>
-    </footer>
+                <small class="menu-label">OPERACIONAL</small>
+                <button class="menu-item" onclick="load('LINK_PAGINA_FECHAMENTOS')">
+                    <i data-lucide="check-circle"></i> FECHAMENTOS
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_ENVIOS')">
+                    <i data-lucide="send"></i> ENVIOS
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_SDR')">
+                    <i data-lucide="user-check"></i> RESULTADO SDR
+                </button>
 
+                <small class="menu-label">RANKINGS</small>
+                <button class="menu-item" onclick="load('LINK_PAGINA_MARCAS')">
+                    <i data-lucide="building"></i> TOP MARCAS E UNID.
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_VENDEDORES')">
+                    <i data-lucide="users"></i> TOP VENDEDORES
+                </button>
+                <button class="menu-item" onclick="load('LINK_PAGINA_VEICULOS')">
+                    <i data-lucide="car"></i> TOP VEÍCULOS
+                </button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-nav">
+                <h2 id="page-title">Resultado IA</h2>
+                <div class="top-nav-right">
+                    <span class="user-info">Usuário | BI Operações</span>
+                    <button onclick="logout()" class="btn-logout">Sair</button>
+                </div>
+            </header>
+            <div class="iframe-container">
+                <iframe id="report-frame" src="https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_my12rcbczd" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
