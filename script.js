@@ -24,7 +24,12 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
 function load(url, e) {
     document.getElementById('dashboard-view').style.display = 'block';
     document.getElementById('monitor-view').style.display = 'none';
-    document.getElementById('report-frame').src = url;
+    
+    // Injeta automaticamente o parâmetro para ocultar navegação nativa do Looker
+    const separator = url.includes('?') ? '&' : '?';
+    const finalUrl = url.includes('navLayout=hidden') ? url : `${url}${separator}navLayout=hidden`;
+    
+    document.getElementById('report-frame').src = finalUrl;
     document.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
     e.currentTarget.classList.add('active');
 }
@@ -34,8 +39,4 @@ function showMonitor(e) {
     document.getElementById('monitor-view').style.display = 'flex';
     document.querySelectorAll('.menu-item').forEach(b => b.classList.remove('active'));
     e.currentTarget.classList.add('active');
-    
-    // Simulação de Logs
-    document.getElementById('email-log').innerHTML = "LOG > Buscando e-mails via Python...<br>LOG > Regex aplicado em 14 mensagens.";
-    document.getElementById('pdf-log').innerHTML = "LOG > 08 PDFs enviados com sucesso via Apps Script.";
 }
