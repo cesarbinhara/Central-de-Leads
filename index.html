@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central de Leads | Grupo Barigui</title>
+    <title>BI Corporativo | Grupo Barigui</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -27,46 +27,50 @@
     <div id="main-app" class="app-container" style="display: none;">
         
         <aside class="sidebar">
-            <div class="sidebar-header">
-                <i data-lucide="layers" class="icon-brand"></i>
-                <span>CENTRAL</span>
+            <div class="sidebar-header-corp">
+                <img src="logo-barigui.png" alt="Logo Barigui" class="logo-mini" onerror="this.style.display='none'">
+                <span>GRUPO BARIGUI</span>
             </div>
-            <nav class="menu-nav">
-                <button class="menu-item active" onclick="load('URL_IA', event)"><i data-lucide="sparkles"></i> RESULTADO IA</button>
-                <button class="menu-item" onclick="load('https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_7wno4cbczd', event)"><i data-lucide="megaphone"></i> ALERTAS E ELOGIOS</button>
-                <button class="menu-item" onclick="load('URL_PESQ_ALERTA', event)"><i data-lucide="search"></i> PESQUISA ALERTA</button>
-                <button class="menu-item" onclick="load('URL_PESQ_ELOGIO', event)"><i data-lucide="message-square"></i> PESQUISA ELOGIO</button>
-                <button class="menu-item" onclick="load('URL_FECHAMENTOS', event)"><i data-lucide="check-circle"></i> FECHAMENTOS</button>
-                <button class="menu-item" onclick="load('URL_ENVIOS', event)"><i data-lucide="send"></i> ENVIOS</button>
-                <button class="menu-item" onclick="load('URL_SDR', event)"><i data-lucide="user-check"></i> RESULTADO SDR</button>
-                <button class="menu-item" onclick="load('URL_MARCAS', event)"><i data-lucide="building"></i> TOP MARCAS E UNID.</button>
-                <button class="menu-item" onclick="load('URL_VENDEDORES', event)"><i data-lucide="users"></i> TOP VENDEDORES</button>
-                <button class="menu-item" onclick="load('URL_VEICULOS', event)"><i data-lucide="car"></i> TOP VEÍCULOS</button>
-                
-                <div id="admin-section" class="admin-divider" style="display: none;">
-                    <button class="menu-item admin-btn" onclick="showMonitor(event)"><i data-lucide="shield-check"></i> MONITORAMENTO</button>
-                </div>
-            </nav>
+
+            <div class="dept-selector">
+                <p class="dept-label">DEPARTAMENTO</p>
+                <button class="dept-opt active" onclick="switchDept('leads')">
+                    <i data-lucide="layers"></i> CENTRAL DE LEADS
+                </button>
+                <button class="dept-opt" onclick="switchDept('mkt')">
+                    <i data-lucide="megaphone"></i> MARKETING
+                </button>
+            </div>
+
+            <hr class="side-divider">
+
+            <nav id="menu-nav" class="menu-nav"></nav>
+
+            <div id="admin-section" class="admin-divider" style="display: none;">
+                <button class="menu-item admin-btn" onclick="showMonitor(event)"><i data-lucide="shield-check"></i> MONITORAMENTO</button>
+            </div>
         </aside>
 
         <main class="main-content">
             <header class="navbar">
                 <div class="nav-left">
-                    <span class="nav-label">OPERAÇÕES</span>
-                    <strong>VENDAS - GRUPO BARIGUI</strong>
+                    <span id="current-dept-label" class="nav-label">CENTRAL DE LEADS</span>
+                    <strong id="current-view-title">CENTRAL DE LEADS</strong>
                 </div>
                 <div class="nav-right">
-                    <div class="user-pill">
-                        <i data-lucide="user" class="icon-user"></i>
-                        <span id="user-display"></span>
+                    <div class="user-info">
+                        <div class="user-pill">
+                            <i data-lucide="user"></i>
+                            <span id="user-display"></span>
+                        </div>
+                        <button onclick="location.reload()" class="btn-logout">Sair</button>
                     </div>
-                    <button onclick="location.reload()" class="btn-logout">Sair</button>
                 </div>
             </header>
 
             <section id="dashboard-view" class="dashboard-container">
                 <div class="iframe-wrapper">
-                    <iframe id="report-frame" class="looker-frame" src="https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_7wno4cbczd?navLayout=hidden" frameborder="0" allowfullscreen></iframe>
+                    <iframe id="report-frame" class="looker-frame" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -84,7 +88,7 @@
             </section>
 
             <footer class="footer">
-                <span>Plataforma de BI Interna • Grupo Barigui © 2026</span>
+                <span>BI Corporativo • Grupo Barigui © 2026</span>
             </footer>
         </main>
     </div>
