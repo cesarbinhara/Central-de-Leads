@@ -4,17 +4,17 @@ const configDepts = {
     leads: {
         label: "CENTRAL DE LEADS",
         topicos: [
-            { id: "central", label: "CENTRAL DE LEADS", icon: "layout", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_7wno4cbczd" },
+            { id: "central", label: "CENTRAL DE LEADS", icon: "layout", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_my12rcbczd" },
             { id: "ia", label: "RESULTADO IA", icon: "sparkles", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_8470vk5e0d" },
-            { id: "alertas", label: "ALERTAS E ELOGIOS", icon: "megaphone", url: "URL_ALERTAS" },
-            { id: "pesq_alerta", label: "PESQUISA - ALERTA", icon: "search", url: "URL_PESQ_ALERTA" },
-            { id: "pesq_elogio", label: "PESQUISA - ELOGIO", icon: "message-square", url: "URL_PESQ_ELOGIO" },
-            { id: "fechamentos", label: "FECHAMENTOS", icon: "check-circle", url: "URL_FECHAMENTOS" },
-            { id: "envios", label: "ENVIOS", icon: "send", url: "URL_ENVIOS" },
-            { id: "sdr", label: "RESULTADO SDR", icon: "user-check", url: "URL_SDR" },
-            { id: "marcas", label: "TOP MARCAS E UNIDADES", icon: "building", url: "URL_MARCAS" },
-            { id: "vendedores", label: "TOP VENDEDORES", icon: "users", url: "URL_VENDEDORES" },
-            { id: "veiculos", label: "TOP VEÍCULOS", icon: "car", url: "URL_VEICULOS" }
+            { id: "alertas", label: "ALERTAS E ELOGIOS", icon: "megaphone", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_7wno4cbczd" },
+            { id: "pesq_alerta", label: "PESQUISA - ALERTA", icon: "search", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_grlredbczd" },
+            { id: "pesq_elogio", label: "PESQUISA - ELOGIO", icon: "message-square", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_okcimnze0d" },
+            { id: "fechamentos", label: "FECHAMENTOS", icon: "check-circle", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_8mw52qsrzd" },
+            { id: "envios", label: "ENVIOS", icon: "send", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_xwrr520n0d" },
+            { id: "sdr", label: "RESULTADO SDR", icon: "user-check", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_lxmsmldczd" },
+            { id: "marcas", label: "TOP MARCAS E UNIDADES", icon: "building", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_y468r25hzd" },
+            { id: "vendedores", label: "TOP VENDEDORES", icon: "users", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_r8rfdr6hzd" },
+            { id: "veiculos", label: "TOP VEÍCULOS", icon: "car", url: "https://lookerstudio.google.com/embed/reporting/cdb43200-132d-4fdd-87c5-ed3a7e27ab0f/page/p_snljnw6hzd" }
         ]
     },
     mkt: {
